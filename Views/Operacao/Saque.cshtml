@@ -1,0 +1,35 @@
+@using Banco.MVC.Controllers;
+@{
+    Layout ="_Layout";
+    ViewData["Title"] = "Saque";
+    string nomeCliente = "";
+    double valorSaque=0;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+<h4>Saque</h4>
+<hr />
+<div class="row">
+    <div class="col-md-2">
+        <form asp-action="Saque">
+            <label for="nome">Nome:</label>
+            <input class="form-control" asp-for="@nomeCliente"/>
+            <span asp-validation-for="@nomeCliente" class="text-danger"></span>
+            <label for="Valor">Valor a Sacar:</label>
+            <input class="form-control" asp-for="@valorSaque">
+            <span asp-validation-for="@valorSaque" class="text-danger"></span>
+            <input type="submit" value="Saque" class="btn btn-primary" />
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

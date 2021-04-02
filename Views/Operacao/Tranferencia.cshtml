@@ -1,0 +1,32 @@
+@using Banco.MVC.Controllers;
+@{
+    Layout ="_Layout";
+    ViewData["Title"] = "Transferencia";
+    string nomePagante = "";
+    string nomeFavorecido = "";
+    double valorPagar = 0 ;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+
+<h4>Tranferencia</h4>
+<hr />
+
+    <form asp-action="Tranferencia">
+        <label>Nome Pagante:</label>
+        <input asp-action="Tranferencia" asp-for="@nomePagante" class="form-control"></input>
+        <label>Nome da conta favorecido(a):</label>
+        <input asp-action="Tranferencia" asp-for="@nomeFavorecido" class="form-control"></input>
+        <label>Valor a transferir:</label>
+        <input asp-action="Tranferencia" asp-for="@valorPagar" class="form-control"></input>
+        <input type="submit" value="Tranferir" class="btn btn-primary" />
+    </form>
+</body>
+</html>
